@@ -7,7 +7,7 @@ const RootCtx = React.createClass({
     },
     render() {
         return (
-            <div>Kalle inputValue: { inputValue }</div>
+            <div>Kalle</div>
         );
     }
 });
@@ -15,7 +15,6 @@ const RootCtx = React.createClass({
 function stateToProps(state) {
     console.log('state: ', state);
     return {
-        inputValue: state.inputValue
     };
 }
 
