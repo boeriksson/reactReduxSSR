@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        js: [
+        approot: [
             './client/index.js'
         ],
         vendor: [
@@ -13,7 +13,8 @@ module.exports = {
     output: {
         path: './static',
         publicPath: '/static/',
-        filename: '[chunkhash].[name].js'
+        filename: '[name].js'
+        //filename: '[chunkhash].[name].js'
     },
     module: {
         rules: [
@@ -33,7 +34,9 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
+            // manifest contains runtime code that would otherwise live in vendor.. this means project can be
+            // rebuilt without changing vendor hash - ie: browser can cash it!
+            names: ['vendor', 'manifest']
         })
     ]
 };
