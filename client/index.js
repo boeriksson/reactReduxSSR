@@ -12,9 +12,7 @@ const store = createStore(reducers, preloadedState);
 const render = () => {
     ReactDOM.render(
         <Provider store={ store }>
-            <div id="React context wrapper" className="outer-wrapper">
-                <RootCtx/>
-            </div>
+            <RootCtx/>
         </Provider>,
         document.getElementById('root')
     );
