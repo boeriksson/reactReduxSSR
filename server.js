@@ -31,26 +31,6 @@ app.get('*', (req, res) => {
     });
 });
 
-/*
-// We are going to fill these out in the sections to follow
-function handleRender(req, res) {
-    const store = createStore(clientApp);
-
-    //const html = '', preloadedState = {};
-
-    const html = renderToString(
-        <Provider store={store}>
-            <Routes />
-        </Provider>
-    );
-
-    const preloadedState = store.getState();
-
-    res.set('Content-Type', 'text/html');
-    res.send(renderFullPage(html, preloadedState));
-}
-*/
-
 function renderFullPage(html, preloadedState) {
     return `
         <!doctype html>
